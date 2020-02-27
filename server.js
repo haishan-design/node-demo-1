@@ -24,7 +24,16 @@ var server = http.createServer(function (request, response) {
     if (path === '/') {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
-        response.write(`这是一个红色`)
+        response.write(`
+        <!ODCTYPE html>
+        <head>
+            <link rel="stylesheet" href="/x">
+        </head>
+        <body>
+            <h1>这是一段红色的文字</h1>
+        </body>
+        
+        `)
         response.end()
     } else if (path === '/x') {
         response.statusCode = 200
